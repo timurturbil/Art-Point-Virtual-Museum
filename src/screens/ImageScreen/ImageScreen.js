@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component , useEffect} from "react";
 import './ImageScreen.css';
 import {
     BrowserRouter as Router,
@@ -6,31 +6,43 @@ import {
     Route,
     Link,
     withRouter,
-    useHistory 
+    useHistory
 } from "react-router-dom";
+import "aos/dist/aos.css";
+import AOS from 'aos';
 const ImageScreen = (props) => {
     const history = useHistory();
-    const onClickHandler = (ImageUrl) => {
-        history.push({ pathname: "/BigImage", state: { url: ImageUrl } });
+    const onClickHandler = (item) => {
+        history.push({ pathname: "/BigImage", state: { item: item } });
     }
+    const myData = ["fade-up", "fade-down", "fade-up-right", "flip-left", "zoom-in", "zoom-in-up", "zoom-in-right", "zoom-in-left"]
+    useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+      }, []);
+    /* console.log(props.museumData.records) */
+    /* console.log(props.museumData.records[1].images[0].baseimageurl +" Image Screen") */
     return (
         <Router>
             {props.museumData.records.map((item, index) => {
+                /* let randomValue = myData[Math.floor(Math.random() * myData.length)]; */
                 return (
-                    <div className="majorImage">
+                    <div className="majorImage" data-aos="zoom-in-up" >
                         <div id="piece" >
                             <div id="holder">
                                 <div id="painting">
-                                    <img className="oneImage" src={props.museumData.records[index].baseimageurl} alt="" />
+                                    <img className="oneImage" src={item.baseimageurl} alt="" />
                                 </div>
                             </div>
-                            <Link to="/BigImage" onClick={() => onClickHandler(props.museumData.records[index].baseimageurl)}>
+                            <Link to="/BigImage" onClick={() => onClickHandler(item)}>
                                 <div id="frame"></div>
                             </Link>
                         </div>
                     </div>
                 )
             }
+
             )
             }
         </Router>

@@ -9,11 +9,11 @@
     display: inline-block;
 }
 .oneImage{
-    width: 140px;
-    height: 200px;
+    width: 180px;
+    height: 260px;
 }
   #piece{
-    margin: 25px;
+    margin: 150px;
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
     cursor: pointer;
     height: 50vh;

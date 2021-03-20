@@ -7,3 +7,12 @@ body {
 	width:100%;
 	height:100%;
 }
+
+.Images{
+	margin-left: 100px;
+}
+
+.LogOutButton{
+	width: 60px;
+	height: 60px;
+}
