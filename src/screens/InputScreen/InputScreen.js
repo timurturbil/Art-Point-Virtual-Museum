@@ -96,8 +96,6 @@ class InputScreen extends Component {
                 {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
                 <button className="myButton" onClick={() => this.toObjectData()}>Bas</button>
                 <br/>
-                <button className="LogOutButton" onClick={this.props.LogOut}>LogOut</button>
-                <br/>
                 Opera Salonuna git: <Link to="/OpereSalon">Bas</Link>
                 <div className="Images" data-aos="fade-down">
                     {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
