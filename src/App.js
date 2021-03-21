@@ -89,18 +89,7 @@ export default function App() {
         <Route path="/OpereSalon" component={OperaScren}>
         </Route>
         <Route exact path="/">
-          {user
-            ? <InputScreen LogOut={handleLogout}/>
-            : <LoginScreen email={email}
-              setEmail={setEmail}
-              password={password}
-              setPassword={setPassword}
-              handleLogin={handleLogin}
-              handleSignup={handleSignup}
-              emailError={emailError}
-              passwordError={passwordError}
-              hasAccount={hasAccount}
-              setHasAccount={setHasAccount} />}
+        <InputScreen LogOut={handleLogout}/>
         </Route>
       </Switch>
     </Router>
