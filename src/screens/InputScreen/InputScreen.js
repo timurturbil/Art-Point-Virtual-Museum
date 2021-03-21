@@ -37,6 +37,7 @@ class InputScreen extends Component {
     }
 
     loadData = () => {
+        console.log(this.state.pageNumber)
         fetch(`https://api.harvardartmuseums.org/Image?apikey=6f510307-f389-4095-b570-1fa9e5c32cd3&size=${this.state.itemNumber}&page=${this.state.pageNumber}`)
             .then(response => response.json())
             .then(data => {
@@ -46,8 +47,18 @@ class InputScreen extends Component {
                     .then(newData => {
                         /* console.log(newData.records[0].people[0].displayname) */
                         data.records.map((item, index) => {
-                            let myData = newData.records[index].people[0]
-                            item['about'] = { "name": myData.displayname, "role": myData.role, "birthplace": myData.birthplace, "gender": myData.gender, "displaydate": myData.displaydate, "culture": myData.culture, "alphasort": myData.alphasort, "name": myData.name, "deathplace": myData.deathplace }
+                            /* console.log(newData.records[index].people[0]) */
+                            let myData = newData.records[index].people && newData.records[index].people[0]
+                            item['about'] = { 
+                                "name": myData && myData.displayname, 
+                                "role": myData && myData.role, 
+                                "birthplace": myData && myData.birthplace, 
+                                "gender": myData && myData.gender, 
+                                "displaydate": myData && myData.displaydate, 
+                                "culture": myData && myData.culture, 
+                                "alphasort": myData && myData.alphasort, 
+                                "name": myData && myData.name, 
+                                "deathplace": myData && myData.deathplace }
                         })
                         this.setState({ museumData: data })
                     })
@@ -84,6 +95,8 @@ class InputScreen extends Component {
                 Şarkı Ismi:  <input type="text" onChange={(event) => this.setState({ topic: event.target.value })} />
                 {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
                 <button className="myButton" onClick={() => this.toObjectData()}>Bas</button>
+                <br/>
+                <button className="LogOutButton" onClick={this.props.LogOut}>LogOut</button>
                 <br/>
                 Opera Salonuna git: <Link to="/OpereSalon">Bas</Link>
                 <div className="Images" data-aos="fade-down">

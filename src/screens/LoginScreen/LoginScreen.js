@@ -16,33 +16,60 @@ const Login = (props) => {
     } = props;
     return (
         <section className="login">
-            <div className="loginContainer"> 
-                <label>UserName</label>
-                <input 
-                type="text" 
-                autoFocus 
-                required 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}/>
-                <p className="ErrorMsg">{emailError}</p>
-                <label>Password</label>
-                <input 
-                type="text" 
-                autoFocus 
-                required 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}/>
-                <p className="ErrorMsg">{passwordError}</p>
+            <div className="loginContainer">
                 <div className="btnContainer">
                     {hasAccount ? (
                         <>
-                        <button onClick={handleLogin}>Sign in</button>
-                        <p>Don't have an account <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
+                            <label>E Mail</label>
+                            <input
+                                type="text"
+                                autoFocus
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)} />
+                            <p className="ErrorMsg">{emailError}</p>
+                            <label >Şifre</label>
+                            <input
+                                type="password"
+                                autoFocus
+                                required
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)} />
+                            <button onClick={handleLogin}>Giriş Yap</button>
+                            <p>Bir Hesabın Yok Mu ? <span onClick={() => setHasAccount(!hasAccount)}>Kayıt Ol</span></p>
                         </>
-                    ):(
+                    ) : (
                         <>
-                        <button onClick={handleSignup}>Sign up</button>
-                        <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></p>
+                            <label>Isim</label>
+                            <input
+                                type="text"
+                                autoFocus
+                                required />
+                            <label>Yaş</label>
+                            <input
+                                type="text"
+                                autoFocus
+                                required
+                            />
+                            <label>E Mail</label>
+                            <input
+                                type="text"
+                                autoFocus
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)} />
+                            <p className="ErrorMsg">{emailError}</p>
+                            <label  >Şifre</label>
+                            <input
+                                type="password"
+                                autoFocus
+                                required
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)} />
+                            <p className="ErrorMsg">{passwordError}</p>
+
+                            <button onClick={handleSignup}>Kayıt Ol</button>
+                            <p>Bir Hesabın Varmı ? <span onClick={() => setHasAccount(!hasAccount)}>Giriş Yap</span></p>
                         </>
                     )}
                 </div>
