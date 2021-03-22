@@ -20,6 +20,8 @@ class InputScreen extends Component {
             museumData: [],
             pageNumber: 1,
             itemNumber: 24,
+            imageDetailPage: 20,
+            imageDetailNumber: 15,
 
         }
         /* this.loadData = this.loadData.bind(this); */
@@ -32,7 +34,7 @@ class InputScreen extends Component {
     }
     changePageNumber = (event, value) => {
         console.log(value)
-        this.setState({ pageNumber: value })
+        this.setState({ pageNumber: value/* , imageDetailPage: ++this.state.imageDetailPage, imageDetailNumber: ++this.state.imageDetailNumber  */})
         this.handleScrollToStats();
     }
 
@@ -90,14 +92,17 @@ class InputScreen extends Component {
     render() {
         return (
             <div>
-                {this.state.data.category && <DailyMotion category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
+                {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
                 {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
                 Şarkı Ismi:  <input type="text" onChange={(event) => this.setState({ topic: event.target.value })} />
                 {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
                 <button className="myButton" onClick={() => this.toObjectData()}>Bas</button>
                 <br/>
+                <button className="LogOutButton" onClick={this.props.LogOut}>LogOut</button>
+                <br/>
                 Opera Salonuna git: <Link to="/OpereSalon">Bas</Link>
-                <div className="Images" data-aos="fade-down">
+                <div className="Images">
+                    
                     {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
                 </div>
                 <Pagination count={100} color="primary" page={this.state.pageNumber} onChange={this.changePageNumber} />

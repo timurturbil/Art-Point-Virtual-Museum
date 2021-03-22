@@ -1,10 +1,4 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Nunito", sans-serif;
-  }
-  
+
   button {
     border: none;
     outline: none;
@@ -13,24 +7,18 @@
     color: #fff;
     font-size: 16px;
     letter-spacing: 1px;
-    background: #603bbb;
+    background: #8a0000;
     cursor: pointer;
   }
   
-  .login {
-    width: 100%;
-    min-height: 100vh;
-    padding: 0 20px;
-    background: #e9e9e9;
-    display: flex;
-  }
   
   .login .loginContainer {
-    padding: 60px;
-    margin: auto;
+    padding: 53px;
+    /* margin: auto; */
     width: 100%;
     max-width: 520px;
-    min-height: 600px;
+    /* min-height: 400px; */
+  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,7 +33,7 @@
   
   .login .loginContainer label {
     color: white;
-    margin: 14px 0;
+    /* margin: 14px 0; */
     display: block;
     font-size: 22px;
     line-height: 1;
@@ -69,13 +57,13 @@
   }
   
   .login .loginContainer .btnContainer p {
-    margin: 14px 0 0 0;
+    /* margin: 14px 0 0 0; */
     text-align: right;
     color: #fff;
   }
   
   .login .loginContainer .btnContainer p span {
-    color: yellow;
+    color: rgb(39, 27, 92);
     font-weight: 500;
     letter-spacing: 0.5px;
     margin-left: 5px;
@@ -94,7 +82,7 @@
   
   .hero {
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background: radial-gradient(
       ellipse at left bottom,
       rgba(22, 24, 47, 1) 0%,
@@ -106,7 +94,7 @@
   .hero nav {
     background: #603bbb;
     width: 100%;
-    padding: 20px 40px;
+    /* padding: 20px 40px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -121,3 +109,72 @@
     padding: 8px 0;
     background: #3a2b58;
   }
+
+
+
+html,
+body {
+  margin: 0;
+}
+
+.hero {
+  $image: 'https://bostonglobe-prod.cdn.arcpublishing.com/resizer/30zOmgLjtH-gvKvaUKDW5rog1Fs=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/ICV4XBS7XUI6JKEJ355RY3TR2E.jpg';
+  background: url($image);
+  //background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  -webkit-animation: slide 28s ease infinite;
+  transform: translate3d(0,0,0);
+  /* height: 100vh; */
+}
+
+.hero:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(76,56,75,.8) */ ///////////////////
+}
+
+.hero__content {
+  z-index: 101;
+  position: relative;
+}
+
+@keyframes slide {
+  0%   { background-position: left; }
+  50%   { background-position: right; }
+  100% { background-position: left; }
+}
+
+.hero p{
+  font-size: 40px;
+  font-weight: 200;
+  color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+.hero__content {
+    padding: 100px 100px;
+    max-width: 1000px;  
+   
+}
+
+.btn {
+  //background: #4C384B;
+  color: white;
+  text-decoration: none;
+  padding: 10px 40px;
+  margin: 20px 0;
+  display: inline-block;
+  font-size: 20px;
+  
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
+.btn:hover { background: #4C384B; 
+  opacity:0.7;
+}
+

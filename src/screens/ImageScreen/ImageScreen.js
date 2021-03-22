@@ -21,12 +21,9 @@ const ImageScreen = (props) => {
           duration : 2000
         });
       }, []);
-    /* console.log(props.museumData.records) */
-    /* console.log(props.museumData.records[1].images[0].baseimageurl +" Image Screen") */
     return (
         <Router>
             {props.museumData.records.map((item, index) => {
-                /* let randomValue = myData[Math.floor(Math.random() * myData.length)]; */
                 return (
                     <div className="majorImage" data-aos="zoom-in-up" >
                         <div id="piece" >
@@ -41,9 +38,7 @@ const ImageScreen = (props) => {
                         </div>
                     </div>
                 )
-            }
-
-            )
+            })
             }
         </Router>
 

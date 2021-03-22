@@ -34,8 +34,8 @@ class DailyMotion extends Component {
                 {this.state.data.list && this.state.data.list.map((item, index) =>
                     <div className="Dailymotion" key={index}>
                         <Dailymotion
-                            width="1400px"
-                            height="200px"
+                            width={this.props.width}
+                            height={this.props.height}
                             video={item.id}
                             uiTheme="light"
                             autoplay={false}

@@ -6,14 +6,18 @@ import {
     Link
   } from "react-router-dom";
   import DailyMotion from '../DailyMotion/DailyMotion';
+import'./OperaScreen.css';
 class OperaScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
             data: {},
             category: "music",
-            topic: "Phantom of the Opera",
-            fetchedNumber: 4,
+            topic: "sempre libera, 10) the phantom of the opera",
+            fetchedNumber: 1,
+            curtainState: "close",
+            /* width: 400,
+            height: 1350, */
         }
     }
     toObjectData = () => {
@@ -23,11 +27,12 @@ class OperaScreen extends Component {
         })
     }
     componentDidMount() {
+
         this.toObjectData()
         fetch(`https://api.harvardartmuseums.org/Image?apikey=6f510307-f389-4095-b570-1fa9e5c32cd3&size=${this.state.itemNumber}&page=${this.state.pageNumber}`)
             .then(response => response.json())
             .then(data => {
-                this.setState({ museumData: data })
+                this.setState({ museumData: data, curtainState: "open" })
             })
             .catch(error => console.log(error))
     }
@@ -45,12 +50,23 @@ class OperaScreen extends Component {
     }
     render() {
         return (
-            <div>
-                <Link to="/">Geri git</Link>
-                {this.state.data.category && <DailyMotion category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber}/>}
-                Şarkı ismi:  <input type="text" onChange={(event) => this.setState({topic: event.target.value})}/>
-            {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
-            <button onClick={() => this.toObjectData()}>Bas</button>
+            <div id="starter">
+                <div id="scene" className="expand">
+                <div id="curtain" className={this.state.curtainState}>
+                    <div className="left"></div>
+                    <div className="right"></div>
+               <div className="mainTools">
+               <Link to="/">Geri git</Link>
+                {this.state.data.category && <DailyMotion width="1350" height="400" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber}/>}
+                  <div>
+                    <p className="Sarkı">Şarkı ismi</p>
+                  <input type="text" onChange={(event) => this.setState({topic: event.target.value})}/>
+                  </div>
+                {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
+                <button className="myButton" onClick={() => this.toObjectData()}>Bas</button>
+               </div>
+            </div>
+            </div>
             </div>
         );
     }
