@@ -92,6 +92,7 @@ class InputScreen extends Component {
     render() {
         return (
             <div>
+                Welcome {this.props.UserName}
                 {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
                 {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
                 Şarkı Ismi:  <input type="text" onChange={(event) => this.setState({ topic: event.target.value })} />

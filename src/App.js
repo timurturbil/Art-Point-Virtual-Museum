@@ -17,7 +17,7 @@ export default function App() {
   const [hasAccount, setHasAccount] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-
+  const [userName, setUserName] = useState("");
 
 
 
@@ -92,7 +92,7 @@ export default function App() {
         <Route exact path="/">
      {/*    <InputScreen LogOut={handleLogout}/> */}
           {user
-            ? <MainScreen LogOut={handleLogout}/>
+            ? <MainScreen LogOut={handleLogout} UserName={userName}/>
             : <LoginScreen email={email}
               setEmail={setEmail}
               password={password}
@@ -102,7 +102,8 @@ export default function App() {
               emailError={emailError}
               passwordError={passwordError}
               hasAccount={hasAccount}
-              setHasAccount={setHasAccount} />}
+              setHasAccount={setHasAccount}
+              setUserName={setUserName} />}
         </Route>
       </Switch>
     </Router>

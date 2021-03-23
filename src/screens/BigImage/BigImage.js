@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useEffect } from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,8 +14,9 @@ const BigImageScreen = (props) => {
         <InputScreen/>
     </div>
     </div> */
+
     const { item } = props.location.state;
-    console.log(item)
+    
     return (
         <div>
             <Link to="/">Geri git</Link>

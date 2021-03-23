@@ -14,6 +14,7 @@ const Login = (props) => {
         passwordError,
         hasAccount,
         setHasAccount,
+        setUserName,
     } = props;
     return (
         <div className="hero">
@@ -24,11 +25,11 @@ const Login = (props) => {
                 <a className="btn" onClick={() => {
                     setValue(true);
                     setHasAccount(false);
-                }}>Kayıt Ol</a>
+                }}>Sign up</a>
                 <a className="btn" onClick={() => {
                     setValue(true);
                     setHasAccount(true);
-                }}>Giriş Yap</a>
+                }}>Log in</a>
                 </div>
                 <div className="LoginUser">
                 <section className="login">
@@ -44,24 +45,26 @@ const Login = (props) => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)} />
                                     <p className="ErrorMsg">{emailError}</p>
-                                    <label >Şifre</label>
+                                    <label >Password</label>
                                     <input
                                         type="password"
                                         autoFocus
                                         required
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)} />
-                                    <button onClick={handleLogin}>Giriş Yap</button>
-                                    <p>Bir Hesabın Yok Mu ? <span onClick={() => setHasAccount(!hasAccount)}>Kayıt Ol</span></p>
+                                        <p className="ErrorMsg">{passwordError}</p>
+                                    <button onClick={handleLogin}>Log in</button>
+                                    <p >Don't have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
                                 </>
                             ) : (
                                 <>
-                                    <label>Isim</label>
+                                    <label>Name</label>
                                     <input
                                         type="text"
                                         autoFocus
-                                        required />
-                                    <label>Yaş</label>
+                                        required
+                                        onChange={(e) => setUserName(e.target.value)} />
+                                    <label>Age</label>
                                     <input
                                         type="text"
                                         autoFocus
@@ -75,7 +78,7 @@ const Login = (props) => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)} />
                                     <p className="ErrorMsg">{emailError}</p>
-                                    <label  >Şifre</label>
+                                    <label >Password</label>
                                     <input
                                         type="password"
                                         autoFocus
@@ -84,13 +87,11 @@ const Login = (props) => {
                                         onChange={(e) => setPassword(e.target.value)} />
                                     <p className="ErrorMsg">{passwordError}</p>
 
-                                    <button onClick={handleSignup}>Kayıt Ol</button>
-                                    <p>Bir Hesabın Varmı ? <span onClick={() => setHasAccount(!hasAccount)}>Giriş Yap</span></p>
+                                    <button onClick={handleSignup}>Sign up</button>
+                                    <p>Have an account ?<span onClick={() => setHasAccount(!hasAccount)}>Log in</span></p>
                                 </>
                             )}
-
                         </div>
-
                     </div>
                 </section>
                 </div>
