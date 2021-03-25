@@ -10,7 +10,8 @@ import {
 } from "react-router-dom";
 import AOS from 'aos';
 import "aos/dist/aos.css";
-
+import { BiLogOutCircle, BiFilm } from "react-icons/bi";
+import IconButton from '@material/react-icon-button';
 
 class InputScreen extends Component {
     constructor(props) {
@@ -18,11 +19,11 @@ class InputScreen extends Component {
         this.state = {
             data: {},
             category: "music",
-            topic: "Baroque Music",
+            topic: "Baroque Music", // Symphony No. 40: I. Molto allegro
             fetchedNumber: 1,
             museumData: [],
             pageNumber: 1,
-            itemNumber: 4,
+            itemNumber: 6,
             imageDetailPage: 20,
             imageDetailNumber: 15,
 
@@ -89,36 +90,29 @@ class InputScreen extends Component {
     }
     handleScrollToStats = () => {
         window.scrollTo({
-            top: 0
+            top: 250
         })
     }
 
     render() {
         return (
             <div>
-                <div className="title">
-                    <button className="LogOutButton" onClick={this.props.LogOut}>LogOut</button>
-                    Welcome to Museum of Art Point {this.props.UserName}
-                    <button className="operaButton"><Link to="/OpereSalon" className="operaLink">Opera House</Link></button>
-                </div>
-
                 <div className="audio">
                     {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
                     {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
-                    <input type="text" placeholder="Search Song" onChange={(event) => this.setState({ topic: event.target.value })} />
+                    <input type="text" placeholder="Search Music" onChange={(event) => this.setState({ topic: event.target.value })} />
                     {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
                     <button className="myButton" onClick={() => this.toObjectData()}>Search</button>
                 </div>
-
-
-                <div className="MainWithBackground" >
-
-                    <div className="Images">
-                        {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
-                    </div>
+                <div className="title">
+                 <IconButton className="LogOutButton" onClick={this.props.LogOut}>
+                        <BiLogOutCircle size={30}/> <div>LogOut</div>
+                    </IconButton>
+                   <Link to="/OpereSalon" className="operaLink">Opera House <BiFilm size={30}/></Link>
                 </div>
-
-
+                <div className="Images">
+                        {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
+                </div>
                 <Pagination className="pagination" count={300} color="black" size="large" page={this.state.pageNumber} onChange={this.changePageNumber} />
             </div>
 

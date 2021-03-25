@@ -20,8 +20,8 @@ const Login = (props) => {
         <div className="hero">
             <div className="hero__content" >
                 <div style={{display: "flex"}}>
-                <div>
-                <p>Harvard Art Museums</p>
+                    <div>
+                <div className="welcomeMessage">Welcome To Art Point</div>
                 <a className="btn" onClick={() => {
                     setValue(true);
                     setHasAccount(false);

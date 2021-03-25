@@ -12,7 +12,6 @@
     cursor: pointer;
   }
   
-  
   .login .loginContainer {
     padding: 80px;
     /* margin: 10px; */
@@ -141,6 +140,11 @@ body {
 .hero__content {
   z-index: 101;
   position: relative;
+}
+.welcomeMessage{
+  font-size: 40px;
+  font-weight: 20px;
+  color: white;
 }
 
 @keyframes slide {

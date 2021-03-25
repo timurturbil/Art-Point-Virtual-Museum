@@ -10,34 +10,35 @@ body {
 
 .title{
 	background-color:#ffdfd3;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	font-size: 40px;
-	font-weight: 900;
-	text-align: center;
+	height: 100px;
+}
+.LogOutButton{
+	background-color: #ffdfd3;
+	color:rgb(131, 13, 13);
+	width: 50px;
+	height: 20px;
 }
 .operaButton{
-	justify-content: center;
-	width: auto;
-	height: auto;
+	/* justify-content: center; */
+	width: 100px;
+	height: 100px;
+	margin-left: 90%;
+	margin-bottom: 10%;
 }
 
 .operaLink {
-	color:#fff;
+	color:rgb(131, 13, 13);
+	margin-left: 85%;
 }
 
-.LogOutButton{
-	color:white;
-	text-align: center;
-	width: auto;
-	height: auto;
-}
+
 .myButton{
 	color:black;
 }
 
 .audio{
 	background-color:#ffdfd3;
-	padding-top: 20px;
+	/* padding-top: 20px; */
 	text-align: center;
 	padding-bottom: 40px;;
 }
@@ -46,17 +47,35 @@ body {
 	color:black;
 }
 
-.MainWithBackground{
-	opacity: 0.8;
-}
+.Images:before {
+	content: "";
+	position: fixed;
+	bottom: 0px;
+	left: 40;
+	right: 0;
+	z-index: -1;
+	display: block;
+	background-image: url('https://aaqeastend.com/wp-content/uploads/2014/11/Harvard-Art-Museum-Courtyard-13699.jpg');
+	/* background-image: url('https://media.istockphoto.com/photos/fire-sparks-background-picture-id1151621528?k=6&m=1151621528&s=612x612&w=0&h=oV9qZogPxxc8I-a76km9a9Bg5yEtKlVL88dMoaP4lEY='); */
+	
+ 	width: 1400px;
+	height: 800px;
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+  }
 
 .Images{
-	background-image: url("https://aaqeastend.com/wp-content/uploads/2014/11/Harvard-Art-Museum-Courtyard-13699.jpg");
 	background-repeat: repeat-y;
 	background-size: contain;
-	padding-top: 80px;
-	padding-left: 50px;
-	opacity:1.5;
+/* 	left: 0;
+	right: 0; */
+	z-index: 9999;
+/* 	margin-left: 20px;
+	margin-right: 20px; */
+	text-align: center;
 }
 
 .pagination{

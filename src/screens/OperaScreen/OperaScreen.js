@@ -56,14 +56,15 @@ class OperaScreen extends Component {
                     <div className="left"></div>
                     <div className="right"></div>
                <div className="mainTools">
-               <Link to="/">Geri git</Link>
+               <Link to="/">Go Back</Link>
                 {this.state.data.category && <DailyMotion width="1350" height="400" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber}/>}
                   <div>
-                    <p className="Sarkı">Şarkı ismi</p>
+                    <p className="Sarkı">Song Name</p>
                   <input type="text" onChange={(event) => this.setState({topic: event.target.value})}/>
+                  <button className="myButton" onClick={() => this.toObjectData()}>Search</button>
                   </div>
                 {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
-                <button className="myButton" onClick={() => this.toObjectData()}>Bas</button>
+                
                </div>
             </div>
             </div>

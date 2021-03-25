@@ -1,36 +1,35 @@
-import { Component, useEffect } from "react";
+import { Component } from "react";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 import './BigImage.css';
+import { BsBoxArrowLeft } from "react-icons/bs";
+/* import FaFolderOpen from 'react-icons/lib/fa/folder-open'; */
 const BigImageScreen = (props) => {
 
-    //Splash screen
-/*     <div class="poster-wrapper">
-    <div class="posters-container">
-        <InputScreen/>
-    </div>
-    </div> */
 
-    const { item } = props.location.state;
-    
+    const { item } = props.location.state;  
     return (
         <div>
-            <Link to="/">Geri git</Link>
-            <img className="myImage" src={item.baseimageurl} alt="" />
-            <div className="About">
-            <div>Name: {item.about.name}</div>
-            <div>alphasort: {item.about.alphasort}</div>
-            <div>birthplace: {item.about.birthplace}</div>
-            <div>culture: {item.about.culture}</div>
-            <div>deathplace: {item.about.deathplace}</div>
-            <div>gender: {item.about.gender}</div>
-            <div>role: {item.about.role}</div>
+            <Link to="/"><BsBoxArrowLeft size={40}/></Link>
+            <div className="card-container">
+            <div className="card u-clearfix">
+                <div className="card-body">
+                    <span className="card-number card-circle subtle"></span>
+                    <span className="card-author subtle">{item.about.birthplace}</span>
+                    <h2 className="card-title">{item.about.name}</h2>
+                    <span className="card-description subtle"></span>
+                    <div className="card-read">{item.about.culture}</div>
+                </div>
+            </div>
+            <div className="card-shadow" />
+            <div className="card-img-wrapper">
+                <img className="card-img" src={item.baseimageurl} alt=""/>
             </div>
         </div>
+        </div>
+
+       
     );
 }
 
