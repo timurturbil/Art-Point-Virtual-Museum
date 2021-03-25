@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import './LoginScreen.scss';
+import image from "../../assets/image.png";
+import image2 from "../../assets/image2.png";
 const Login = (props) => {
     const [value, setValue] = useState(false);
     const {
@@ -19,9 +21,11 @@ const Login = (props) => {
     return (
         <div className="hero">
             <div className="hero__content" >
+            <img style={{width: "400px", height: "100px"}} src={image2}/>
                 <div style={{display: "flex"}}>
+                
                     <div>
-                <div className="welcomeMessage">Welcome To Art Point</div>
+                
                 <a className="btn" onClick={() => {
                     setValue(true);
                     setHasAccount(false);

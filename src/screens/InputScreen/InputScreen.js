@@ -97,6 +97,16 @@ class InputScreen extends Component {
     render() {
         return (
             <div>
+                <div>
+                    <div className="hello1"><IconButton className="LogOutButton" onClick={this.props.LogOut}>
+                        <div className="myIcons"><BiLogOutCircle size={30} /></div> <div className="LogOut5">LogOut</div>
+                    </IconButton></div>
+                    <div className="WelcomeMessage1">Welcome To Museum of Art Point {this.props.UserName}</div>
+                   <Link to="/OpereSalon" className="operaLink">Opera House <BiFilm size={30}/></Link>
+{/*                  
+                    <div className="WelcomeMessage1">Welcome To Art Point {this.props.UserName}</div>
+                   <div className="operaLink"><Link to="/OpereSalon" >Opera House <BiFilm size={30}/></Link></div> */}
+                </div>
                 <div className="audio">
                     {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
                     {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
@@ -104,15 +114,12 @@ class InputScreen extends Component {
                     {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
                     <button className="myButton" onClick={() => this.toObjectData()}>Search</button>
                 </div>
-                <div className="title">
-                 <IconButton className="LogOutButton" onClick={this.props.LogOut}>
-                        <BiLogOutCircle size={30}/> <div>LogOut</div>
-                    </IconButton>
-                   <Link to="/OpereSalon" className="operaLink">Opera House <BiFilm size={30}/></Link>
-                </div>
+                
                 <div className="Images">
                         {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
                 </div>
+                
+                
                 <Pagination className="pagination" count={300} color="black" size="large" page={this.state.pageNumber} onChange={this.changePageNumber} />
             </div>
 

@@ -2,6 +2,13 @@
 /* .myButton4{
   margin-right: 100px;
 } */
+.GoBack{
+  margin-right: 1300px;
+}
+.myButton{
+  color: gray;
+  background-color: white;
+}
 .Sarkı{
     color: rgb(9, 11, 12);
     background-color: aliceblue;
