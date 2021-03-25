@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import DailyMotion from '../DailyMotion/DailyMotion';
+import backgroundImage from '../../assets/background-image.jpg';
 import ImageScreen from "../ImageScreen/ImageScreen";
-import './InputScreen.css'
+import './InputScreen.scss'
 import Pagination from '@material-ui/lab/Pagination';
 import {
     BrowserRouter as Router,
@@ -9,6 +10,8 @@ import {
 } from "react-router-dom";
 import AOS from 'aos';
 import "aos/dist/aos.css";
+
+
 class InputScreen extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +22,7 @@ class InputScreen extends Component {
             fetchedNumber: 1,
             museumData: [],
             pageNumber: 1,
-            itemNumber: 24,
+            itemNumber: 4,
             imageDetailPage: 20,
             imageDetailNumber: 15,
 
@@ -34,7 +37,7 @@ class InputScreen extends Component {
     }
     changePageNumber = (event, value) => {
         console.log(value)
-        this.setState({ pageNumber: value/* , imageDetailPage: ++this.state.imageDetailPage, imageDetailNumber: ++this.state.imageDetailNumber  */})
+        this.setState({ pageNumber: value/* , imageDetailPage: ++this.state.imageDetailPage, imageDetailNumber: ++this.state.imageDetailNumber  */ })
         this.handleScrollToStats();
     }
 
@@ -51,16 +54,17 @@ class InputScreen extends Component {
                         data.records.map((item, index) => {
                             /* console.log(newData.records[index].people[0]) */
                             let myData = newData.records[index].people && newData.records[index].people[0]
-                            item['about'] = { 
-                                "name": myData && myData.displayname, 
-                                "role": myData && myData.role, 
-                                "birthplace": myData && myData.birthplace, 
-                                "gender": myData && myData.gender, 
-                                "displaydate": myData && myData.displaydate, 
-                                "culture": myData && myData.culture, 
-                                "alphasort": myData && myData.alphasort, 
-                                "name": myData && myData.name, 
-                                "deathplace": myData && myData.deathplace }
+                            item['about'] = {
+                                "name": myData && myData.displayname,
+                                "role": myData && myData.role,
+                                "birthplace": myData && myData.birthplace,
+                                "gender": myData && myData.gender,
+                                "displaydate": myData && myData.displaydate,
+                                "culture": myData && myData.culture,
+                                "alphasort": myData && myData.alphasort,
+                                "name": myData && myData.name,
+                                "deathplace": myData && myData.deathplace
+                            }
                         })
                         this.setState({ museumData: data })
                     })
@@ -77,12 +81,12 @@ class InputScreen extends Component {
         this.loadData()
     }
 
-        componentDidUpdate(prevProps, prevState) {
-            AOS.refresh();
-            if (JSON.stringify(prevState) !== JSON.stringify(this.state)) {
-                this.loadData()
-            }
+    componentDidUpdate(prevProps, prevState) {
+        AOS.refresh();
+        if (JSON.stringify(prevState) !== JSON.stringify(this.state)) {
+            this.loadData()
         }
+    }
     handleScrollToStats = () => {
         window.scrollTo({
             top: 0
@@ -92,21 +96,30 @@ class InputScreen extends Component {
     render() {
         return (
             <div>
-                Welcome {this.props.UserName}
-                {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
-                {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
-                Şarkı Ismi:  <input type="text" onChange={(event) => this.setState({ topic: event.target.value })} />
-                {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
-                <button className="myButton" onClick={() => this.toObjectData()}>Bas</button>
-                <br/>
-                <button className="LogOutButton" onClick={this.props.LogOut}>LogOut</button>
-                <br/>
-                Opera Salonuna git: <Link to="/OpereSalon">Bas</Link>
-                <div className="Images">
-                    
-                    {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
+                <div className="title">
+                    <button className="LogOutButton" onClick={this.props.LogOut}>LogOut</button>
+                    Welcome to Museum of Art Point {this.props.UserName}
+                    <button className="operaButton"><Link to="/OpereSalon" className="operaLink">Opera House</Link></button>
                 </div>
-                <Pagination count={100} color="primary" page={this.state.pageNumber} onChange={this.changePageNumber} />
+
+                <div className="audio">
+                    {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
+                    {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
+                    <input type="text" placeholder="Search Song" onChange={(event) => this.setState({ topic: event.target.value })} />
+                    {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
+                    <button className="myButton" onClick={() => this.toObjectData()}>Search</button>
+                </div>
+
+
+                <div className="MainWithBackground" >
+
+                    <div className="Images">
+                        {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
+                    </div>
+                </div>
+
+
+                <Pagination className="pagination" count={300} color="black" size="large" page={this.state.pageNumber} onChange={this.changePageNumber} />
             </div>
 
         );

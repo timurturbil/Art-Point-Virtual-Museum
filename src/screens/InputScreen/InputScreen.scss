@@ -1,0 +1,68 @@
+
+body {
+	margin:0;
+	padding:0;
+	background:#ffdfd3;
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+.title{
+	background-color:#ffdfd3;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 40px;
+	font-weight: 900;
+	text-align: center;
+}
+.operaButton{
+	justify-content: center;
+	width: auto;
+	height: auto;
+}
+
+.operaLink {
+	color:#fff;
+}
+
+.LogOutButton{
+	color:white;
+	text-align: center;
+	width: auto;
+	height: auto;
+}
+.myButton{
+	color:black;
+}
+
+.audio{
+	background-color:#ffdfd3;
+	padding-top: 20px;
+	text-align: center;
+	padding-bottom: 40px;;
+}
+
+::placeholder{
+	color:black;
+}
+
+.MainWithBackground{
+	opacity: 0.8;
+}
+
+.Images{
+	background-image: url("https://aaqeastend.com/wp-content/uploads/2014/11/Harvard-Art-Museum-Courtyard-13699.jpg");
+	background-repeat: repeat-y;
+	background-size: contain;
+	padding-top: 80px;
+	padding-left: 50px;
+	opacity:1.5;
+}
+
+.pagination{
+	background-color:#ffdfd3;
+	width: auto;
+	height: 100px;
+	justify-content: center;
+	align-items: center;
+}
