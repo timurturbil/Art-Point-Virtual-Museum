@@ -29,7 +29,9 @@ class DailyMotion extends Component {
     }
 
     render() {
+        
         return (
+           
             <div className="App" ref={el => (this.div = el)}>
                 {this.state.data.list && this.state.data.list.map((item, index) =>
                     <div className="Dailymotion" key={index}>

@@ -25,11 +25,11 @@ const ImageScreen = (props) => {
         <Router>
             {props.museumData.records.map((item, index) => {
                 return (
-                    <div className="majorImage" data-aos="zoom-in-up" >
+                    <div className="majorImage" data-aos="zoom-in-up" key={index}>
                         <div id="piece" >
                             <div id="holder">
                                 <div id="painting">
-                                    <img className="oneImage" src={item.baseimageurl} alt="" />
+                                    <img className="oneImage"  src={item.baseimageurl} alt="" />
                                 </div>
                             </div>
                             <Link to="/BigImage" onClick={() => onClickHandler(item)}>

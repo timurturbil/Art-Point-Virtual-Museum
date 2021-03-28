@@ -1,30 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap%27');
+
 body {
   margin: 0;
   padding: 0;
-  background: #ffdfd3;
+  background: #b1aa72;
   position: absolute;
   width: 100%;
   height: 100%;
 }
+.SearchItems{
+  margin-right: 650px;
+}
+.myInput{
+  flex: left;
+  /* margin-right: 1200px; */
+  width: 160px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  /* background-image: url(../../assets/search1.png); */
+  /* background-position: 0px 0px;  */
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 25px;
+  transition: width 0.4s ease-in-out;
+  /* color: rgba(255, 0, 0, 0.041); */
+  /* background: transparent; */
+  background-color: rgba(182, 182, 182, 0);
+  
+}
+.myInput:focus {
+  flex: left;
+  width: 30%;
+  background-color: rgb(230, 230, 230);
+}
+
+.myButton10 {
+  width: 60px;
+  height: 20px;
+  /* margin-top: 10px; */
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.096);
+  /* color: black; */
+
+  margin-right: 400px;
+}
+/* .myInput10{
+  flex: left;
+} */
 
 .LogOutButton {
   margin-top: 0px;
   float: left;
-  background-color: #ffdfd3;
-  color: rgb(131, 13, 13);
+  background-color: #b1aa7200;
+  color: rgb(179, 177, 177);
   height: 35px;
   width: 5%;
 }
 .WelcomeMessage1 {
+  font-family: 'Libre Barcode 39 Text', cursive;
   float: left;
   margin-top: 10px;
-  font-size: 30px;
-  font-style: italic;
-  margin-left: 320px;
+  font-size: 40px;
+  /* font-style: italic; */
+  margin-left: 300px;
+  color: white;
 }
 .operaLink {
   float: right;
-  color: rgb(131, 13, 13);
+  color: rgb(179, 177, 177);
   margin-top: 15px;
   margin-right: 10px;
   font-weight: 15px;
@@ -36,19 +81,17 @@ body {
 	margin-left: 40px;
 }
 
-.myButton {
-  color: black;
-}
+
 
 .audio {
-  background-color: #ffdfd3;
+  background-color: #b1aa7228;
   /* padding-top: 20px; */
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 ::placeholder {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .Images:before {
@@ -59,12 +102,17 @@ body {
   right: 0;
   z-index: -1;
   display: block;
-  /* background-image: url('https://aaqeastend.com/wp-content/uploads/2014/11/Harvard-Art-Museum-Courtyard-13699.jpg'); */
-
-  /* background-color: #312f4d; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  //
+  /* background-image: url("https://img.pixers.pics/pho_wat(s3:700/FO/35/47/34/02/700_FO35473402_4e4c85f78c6e2bc2e207d943d32828ec.jpg,700,525,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,475,jpg)/wall-murals-blue-wall-texture-background.jpg.jpg"); */
+  /* background-image: url('https://img.freepik.com/free-photo/concrete-wall-scratched-material-background-texture-concept_53876-42915.jpg?size=626&ext=jpg'); */
+  /* background-image: url(../../assets/ground.jpg); */
+  background-image: url('https://wallpaperaccess.com/full/113479.jpg');
+  /* background-color: #201e38; */
   width: 1400px;
   height: 800px;
-  /* 	-webkit-filter: blur(3px);
+/*   	-webkit-filter: blur(3px);
 	-moz-filter: blur(3px);
 	-o-filter: blur(3px);
 	-ms-filter: blur(3px);
@@ -72,10 +120,10 @@ body {
 }
 
 .Images {
-  background-image: url("https://img.pixers.pics/pho_wat(s3:700/FO/35/47/34/02/700_FO35473402_4e4c85f78c6e2bc2e207d943d32828ec.jpg,700,525,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,475,jpg)/wall-murals-blue-wall-texture-background.jpg.jpg");
-  background-repeat: no-repeat;
-
-  background-size: cover;
+  
+  /* background-repeat: no-repeat; */
+  
+  
   /* 	left: 0;
 	right: 0; */
   z-index: 9999;
@@ -85,7 +133,9 @@ body {
 }
 
 .pagination {
-  background-color: #ffdfd3;
+  background: #b1aa724b;
+  color: white;
+  /* background-color: rgba(182, 182, 182, 0); */
   width: auto;
   height: 100px;
   justify-content: center;

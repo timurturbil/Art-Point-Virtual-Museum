@@ -102,25 +102,26 @@ class InputScreen extends Component {
                         <div className="myIcons"><BiLogOutCircle size={30} /></div> <div className="LogOut5">LogOut</div>
                     </IconButton></div>
                     <div className="WelcomeMessage1">Welcome To Museum of Art Point {this.props.UserName}</div>
-                   <Link to="/OpereSalon" className="operaLink">Opera House <BiFilm size={30}/></Link>
-{/*                  
+                    <Link to="/OpereSalon" className="operaLink">Opera House <BiFilm size={30} /></Link>
+                    {/*                  
                     <div className="WelcomeMessage1">Welcome To Art Point {this.props.UserName}</div>
                    <div className="operaLink"><Link to="/OpereSalon" >Opera House <BiFilm size={30}/></Link></div> */}
                 </div>
                 <div className="audio">
                     {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
                     {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
-                    <input type="text" placeholder="Search Music" onChange={(event) => this.setState({ topic: event.target.value })} />
-                    {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
-                    <button className="myButton" onClick={() => this.toObjectData()}>Search</button>
+                    <div className="SearchItems">
+                        <input className="myInput" type="text" placeholder="Find Music" onChange={(event) => this.setState({ topic: event.target.value })} />
+                        <button className="myButton10" onClick={() => this.toObjectData()}>Search</button>
+                    </div>
                 </div>
-                
+
                 <div className="Images">
-                        {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
+                    {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
                 </div>
-                
-                
-                <Pagination className="pagination" count={300} color="black" size="large" page={this.state.pageNumber} onChange={this.changePageNumber} />
+
+
+                <Pagination className="pagination" count={300} color="primary" size="large" page={this.state.pageNumber} onChange={this.changePageNumber} />
             </div>
 
         );
