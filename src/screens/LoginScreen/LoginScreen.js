@@ -1,53 +1,33 @@
 
-import React from 'react';
-import './LoginScreen.css';
+import React, { useState } from 'react';
+import './LoginScreen.scss';
 const Login = (props) => {
+    const [value, setValue] = useState(false);
     const {
-        email,
-        setEmail,
-        password,
-        setPassword,
-        handleLogin,
-        handleSignup,
-        emailError,
-        passwordError,
-        hasAccount,
         setHasAccount,
+        setUserName,
     } = props;
     return (
-        <section className="login">
-            <div className="loginContainer"> 
-                <label>UserName</label>
-                <input 
-                type="text" 
-                autoFocus 
-                required 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}/>
-                <p className="ErrorMsg">{emailError}</p>
-                <label>Password</label>
-                <input 
-                type="text" 
-                autoFocus 
-                required 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}/>
-                <p className="ErrorMsg">{passwordError}</p>
-                <div className="btnContainer">
-                    {hasAccount ? (
-                        <>
-                        <button onClick={handleLogin}>Sign in</button>
-                        <p>Don't have an account <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
-                        </>
-                    ):(
-                        <>
-                        <button onClick={handleSignup}>Sign up</button>
-                        <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></p>
-                        </>
-                    )}
+        <div className="hero">
+            <div className="hero__content" >
+                <div style={{display: "flex"}}>
+                <div>
+                <p>Harvard Art Museums</p>
+                <a className="btn" onClick={() => {
+                    setValue(true);
+                    setHasAccount(false);
+                }}>Sign up</a>
+                <a className="btn" onClick={() => {
+                    setValue(true);
+                    setHasAccount(true);
+                }}>Log in</a>
+                </div>
+                
                 </div>
             </div>
-        </section>
+            
+        </div>
+
     );
 }
 export default Login;

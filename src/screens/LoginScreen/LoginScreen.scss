@@ -1,0 +1,180 @@
+button {
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: #3815666e;
+  cursor: pointer;
+}
+
+
+.login .loginContainer {
+  padding: 80px;
+  /* margin: 10px; */
+  width: 100%;
+  max-width: 520px;
+  /* min-height: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse at left bottom,
+    rgb(218, 100, 33) 0%,
+    rgba(184, 181, 11, 0.315) 59%,
+    rgb(56, 167, 56) 100%
+  );
+  box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+}
+
+.login .loginContainer label {
+  color: rgb(0, 0, 0);
+  /* margin: 14px 0; */
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.login .loginContainer input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  padding: 10px;
+  background: rgba(63, 0, 238, 0.1);
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+}
+
+.login .loginContainer .btnContainer {
+  width: 100%;
+  margin-top: 15px;
+  /* padding: 0px 0; */
+}
+
+.login .loginContainer .btnContainer p {
+  /* margin: 14px 0 0 0; */
+  text-align: right;
+  color: #fff;
+  font-size: 15px;
+}
+
+.login .loginContainer .btnContainer p span {
+  color: rgb(39, 27, 92);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+}
+
+.login .loginContainer .btnContainer p span:hover {
+  color: red;
+}
+
+.login .loginContainer .ErrorMsg {
+  color: red;
+  font-size: 16px;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(
+    ellipse at left bottom,
+    rgba(22, 24, 47, 1) 0%,
+    rgba(38, 20, 72, 0.9) 59%,
+    rgba(17, 27, 75, 0.9) 100%
+  );
+}
+
+.hero nav {
+  background: #603bbb;
+  width: 100%;
+  /* padding: 20px 40px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero nav h2 {
+  color: #fff;
+}
+
+.hero nav button {
+  width: 86px;
+  padding: 8px 0;
+  background: #2d582b;
+}
+
+
+
+html,
+body {
+margin: 0;
+background-size: cover;
+}
+
+.hero {
+  $image: 'https://bostonglobe-prod.cdn.arcpublishing.com/resizer/30zOmgLjtH-gvKvaUKDW5rog1Fs=/1440x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/ICV4XBS7XUI6JKEJ355RY3TR2E.jpg';
+  background: url($image);
+  //background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  -webkit-animation: slide 28s ease infinite;
+  transform: translate3d(0,0,0);
+   height: 100vh; 
+}
+
+.hero:before {
+content: "";
+position: absolute;
+z-index: 1;
+width: 100%;
+height: 100%;
+
+}
+
+.hero__content {
+z-index: 101;
+position: relative;
+}
+
+@keyframes slide {
+0%   { background-position: left; }
+50%   { background-position: right; }
+100% { background-position: left; }
+}
+
+.hero p{
+font-size: 40px;
+font-weight: 200;
+color: rgb(255, 255, 255);
+margin: 0;
+}
+
+.hero__content {
+  padding: 100px 100px;
+  max-width: 300px;  
+ 
+}
+
+.btn {
+
+color: white;
+text-decoration: none;
+padding: 10px 40px;
+margin: 20px 0;
+display: inline-block;
+font-size: 20px;
+
+border: 1px solid #fff;
+border-radius: 4px;
+}
+
+.btn:hover { background: #4C384B; 
+opacity:0.7;
+}
