@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import DailyMotion from '../DailyMotion/DailyMotion';
-import backgroundImage from '../../assets/background-image.jpg';
 import ImageScreen from "../ImageScreen/ImageScreen";
 import './InputScreen.scss'
 import Pagination from '@material-ui/lab/Pagination';
 import {
-    BrowserRouter as Router,
     Link,
 } from "react-router-dom";
 import AOS from 'aos';

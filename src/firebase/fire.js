@@ -1,6 +1,7 @@
-import firebase from 'firebase';
 
-var firebaseConfig = {
+import firebase from 'firebase/app'
+require('firebase/auth');
+const firebaseConfig = {
     apiKey: "AIzaSyDpu3RDAE5GO_IlVdaqmdgQ_3sSDmglozo",
     authDomain: "museum-app-32e17.firebaseapp.com",
     projectId: "museum-app-32e17",

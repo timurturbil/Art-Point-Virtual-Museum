@@ -1,5 +1,4 @@
-import { Component, useEffect, useState } from "react";
-import InputScreen from './screens/InputScreen/InputScreen';
+import {useEffect, useState } from "react";
 import MainScreen from './screens/main';
 import BigImageScreen from './screens/BigImage/BigImage';
 import OperaScren from './screens/OperaScreen/OperaScreen';
@@ -81,7 +80,7 @@ export default function App() {
 
   useEffect(() => {
     authListener();
-  }, [])
+  },)
   return (
     <Router>
       <Switch>

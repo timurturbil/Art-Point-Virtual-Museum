@@ -1,9 +1,7 @@
-import { Component , useEffect} from "react";
+import {  useEffect} from "react";
 import './ImageScreen.css';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
     withRouter,
     useHistory
@@ -15,7 +13,6 @@ const ImageScreen = (props) => {
     const onClickHandler = (item) => {
         history.push({ pathname: "/BigImage", state: { item: item } });
     }
-    const myData = ["fade-up", "fade-down", "fade-up-right", "flip-left", "zoom-in", "zoom-in-up", "zoom-in-right", "zoom-in-left"]
     useEffect(() => {
         AOS.init({
           duration : 2000

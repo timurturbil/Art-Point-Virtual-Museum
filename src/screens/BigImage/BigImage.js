@@ -1,10 +1,9 @@
-import { Component, useEffect } from "react";
+import { useEffect } from "react";
 import {
     Link
 } from "react-router-dom";
 import './BigImage.css';
 import { BsBoxArrowLeft } from "react-icons/bs";
-/* import FaFolderOpen from 'react-icons/lib/fa/folder-open'; */
 const BigImageScreen = (props) => {
     useEffect(() => {
         window.scrollTo({
