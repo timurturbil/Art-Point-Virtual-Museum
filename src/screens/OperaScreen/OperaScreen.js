@@ -14,8 +14,6 @@ class OperaScreen extends Component {
             topic: "sempre libera, 10) the phantom of the opera",
             fetchedNumber: 1,
             curtainState: "close",
-            /* width: 400,
-            height: 1350, */
         }
     }
     toObjectData = () => {
@@ -56,18 +54,16 @@ class OperaScreen extends Component {
                         <div className="mainTools">
                             <div className="GoBack">
                             <Link to="/">
-                                <BsBoxArrowLeft style={{ color: "white" }} />
+                                <BsBoxArrowLeft style={{ color: "white"  }} />
                             </Link>
                             </div>
 
-                            {this.state.data.category && <DailyMotion width="1350" height="400" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
+                            {this.state.data.category && <DailyMotion width="50%" height="500" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
                             <div>
-                                <p className="Sarkı">Song Name</p>
+                                <p className="Sarkı">Opera Name</p>
                                 <input type="text" onChange={(event) => this.setState({ topic: event.target.value })} />
                                 <button className="myButton" onClick={() => this.toObjectData()}>Search</button>
                             </div>
-                            {/* FetchedNumber: <input type="number" onChange={(event) => this.setState({fetchedNumber: event.target.value})}/> */}
-
                         </div>
                     </div>
                 </div>

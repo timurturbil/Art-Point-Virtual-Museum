@@ -1,41 +1,42 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:800|Roboto+Condensed:700i");
-/* .myButton4{
-  margin-right: 100px;
-} */
-.GoBack{
-  margin-right: 1300px;
-}
+
+
 .myButton{
   color: gray;
   background-color: white;
 }
 .Sarkı{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
     color: rgb(9, 11, 12);
     background-color: aliceblue;
 }
 
 .mainTools {
   float: left;
-  width: 1930px;
+  width: 100%;
   overflow-y: auto;
-  height: 700px;
+  height: 100%;
 }
-
-body {
+.GoBack{
+  width:35%;
+}
+/* body {
   width: 100%;
   min-height: 600px;
   height: 100%;
   padding: 0;
   margin: 0;
-}
+} */
 
 #starter {
   z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   margin-top: -25px;
   margin-left: -150px;
   text-align: center;

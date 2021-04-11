@@ -10,7 +10,6 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import { BiLogOutCircle, BiFilm } from "react-icons/bi";
 import IconButton from '@material/react-icon-button';
-
 class InputScreen extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +25,6 @@ class InputScreen extends Component {
             imageDetailNumber: 15,
 
         }
-        /* this.loadData = this.loadData.bind(this); */
     }
     toObjectData = () => {
         const myObject = { "category": this.state.category, "topic": this.state.topic, "fetchedNumber": this.state.fetchedNumber }
@@ -36,7 +34,7 @@ class InputScreen extends Component {
     }
     changePageNumber = (event, value) => {
         console.log(value)
-        this.setState({ pageNumber: value/* , imageDetailPage: ++this.state.imageDetailPage, imageDetailNumber: ++this.state.imageDetailNumber  */ })
+        this.setState({ pageNumber: value })
         this.handleScrollToStats();
     }
 
@@ -94,26 +92,24 @@ class InputScreen extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <div className="hello1"><IconButton className="LogOutButton" onClick={this.props.LogOut}>
-                        <div className="myIcons"><BiLogOutCircle size={30} /></div> <div className="LogOut5">LogOut</div>
-                    </IconButton></div>
+            <div className="myMainDiv">
+                <div className="NavBarItems">
+                    <div className="LogOutItems">
+                        <IconButton className="LogOutButton" onClick={this.props.LogOut}>
+                            <div className="myIcons"><BiLogOutCircle size={30} /></div>
+                            <div className="LogOut5">LogOut</div>
+                        </IconButton>
+                    </div>
                     <div className="WelcomeMessage1">Welcome To Museum of Art Point {this.props.UserName}</div>
                     <Link to="/OpereSalon" className="operaLink">Opera House <BiFilm size={30} /></Link>
-                    {/*                  
-                    <div className="WelcomeMessage1">Welcome To Art Point {this.props.UserName}</div>
-                   <div className="operaLink"><Link to="/OpereSalon" >Opera House <BiFilm size={30}/></Link></div> */}
                 </div>
                 <div className="audio">
-                    {this.state.data.category && <DailyMotion width="1350" height="200" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
-                    {/* Category:   <input type="text" onChange={(event) => this.setState({category: event.target.value})}/> */}
+                    {this.state.data.category && <DailyMotion width="100%" height="100%" category={this.state.data.category} topic={this.state.data.topic} fetchedNumber={this.state.data.fetchedNumber} />}
                     <div className="SearchItems">
                         <input className="myInput" type="text" placeholder="Find Music" onChange={(event) => this.setState({ topic: event.target.value })} />
                         <button className="myButton10" onClick={() => this.toObjectData()}>Search</button>
                     </div>
                 </div>
-
                 <div className="Images">
                     {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
                 </div>

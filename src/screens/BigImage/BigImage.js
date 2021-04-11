@@ -4,13 +4,13 @@ import {
 } from "react-router-dom";
 import './BigImage.css';
 import { BsBoxArrowLeft } from "react-icons/bs";
+
 const BigImageScreen = (props) => {
     useEffect(() => {
         window.scrollTo({
             top: 0
         })
     }, [])
-
     const { item } = props.location.state;
     return (
         <div>
@@ -37,3 +37,9 @@ const BigImageScreen = (props) => {
 }
 
 export default BigImageScreen;
+
+
+
+
+
+
