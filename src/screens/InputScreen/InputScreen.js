@@ -113,8 +113,6 @@ class InputScreen extends Component {
                 <div className="Images">
                     {this.state.museumData.records ? <ImageScreen museumData={this.state.museumData} /> : ""}
                 </div>
-
-
                 <Pagination className="pagination" count={300} color="primary" size="large" page={this.state.pageNumber} onChange={this.changePageNumber} />
             </div>
 
